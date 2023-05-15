@@ -3,7 +3,7 @@ package techproed.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import techproed.utilities.Driver;
+import techproed.tests.day26_ExcelDataProvider.C01_DataProvider;
 
 public class OpenSourcePage {
     /*
@@ -13,7 +13,7 @@ public class OpenSourcePage {
      3- @FindBy notasyonu kullanarak locatelerimizi aliriz
      */
     public OpenSourcePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(C01_DataProvider.Driver.getDriver(),this);
     }
 
    // Driver.getDriver().findElement(By.xpath("locate")); normalde boyle yapiyordum..

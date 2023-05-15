@@ -4,8 +4,8 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.TestCenterTechproPage;
+import techproed.tests.day26_ExcelDataProvider.C01_DataProvider;
 import techproed.utilities.ConfigReader;
-import techproed.utilities.Driver;
 
 public class PositiveTest {
     @Test
@@ -17,7 +17,7 @@ public class PositiveTest {
         Admin email: jack@gmail.com
         Admin password: 12345
          */
-        Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
+        C01_DataProvider.Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
         TestCenterTechproPage.BlueRentACarPage blueRentalPage = new TestCenterTechproPage.BlueRentACarPage();
         blueRentalPage.login.click();
 

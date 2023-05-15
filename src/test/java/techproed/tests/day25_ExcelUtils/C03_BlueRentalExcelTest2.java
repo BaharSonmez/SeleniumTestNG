@@ -3,10 +3,8 @@ package techproed.tests.day25_ExcelUtils;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import techproed.pages.BlueRentalPage;
+import techproed.tests.day26_ExcelDataProvider.C01_DataProvider;
 import techproed.utilities.ConfigReader;
-import techproed.utilities.Driver;
-import techproed.utilities.ExcelUtils;
-import techproed.utilities.ReusableMethods;
 
 import java.io.FileNotFoundException;
 
@@ -19,9 +17,9 @@ public class C03_BlueRentalExcelTest2 {
 
          */
 
-        ExcelUtils excelUtils = new ExcelUtils("src/test/java/resources/mysmoketestdata.xlsx","customer_info");
+        C01_DataProvider.ExcelUtils excelUtils = new C01_DataProvider.ExcelUtils("src/test/java/resources/mysmoketestdata.xlsx","customer_info");
         //once sayfaya gidelim
-        Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
+        C01_DataProvider.Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
         //Bir loop olusturup excel dosyasindaki tum verileri girdirelim
         BlueRentalPage blueRentalPage= new BlueRentalPage();
         for (int i = 1; i <= excelUtils.rowCount() ; i++) { //i' yi birden baslattik cunku veriler1. satidan basliyor
@@ -30,17 +28,17 @@ public class C03_BlueRentalExcelTest2 {
             System.out.println(mail + " "+password);
 
          blueRentalPage.login.click();
-            ReusableMethods.bekle(3);
+            C01_DataProvider.ReusableMethods.bekle(3);
          blueRentalPage.email.sendKeys(mail, Keys.ENTER,password,Keys.ENTER);
          assert  blueRentalPage.verify.isDisplayed();
-            ReusableMethods.bekle(3);
+            C01_DataProvider.ReusableMethods.bekle(3);
          blueRentalPage.login3.click();
          blueRentalPage.logout.click();
-         ReusableMethods.bekle(3);
+         C01_DataProvider.ReusableMethods.bekle(3);
          blueRentalPage.ok.click();
 
         }
-        Driver.closeDriver();
+        C01_DataProvider.Driver.closeDriver();
 
     }
 }

@@ -3,12 +3,12 @@ package techproed.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import techproed.utilities.Driver;
+import techproed.tests.day26_ExcelDataProvider.C01_DataProvider;
 
 public class TestCenterTechproPage {
 
     public TestCenterTechproPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(C01_DataProvider.Driver.getDriver(),this);
     }
     @FindBy(xpath = "//*[@id='exampleInputEmail1']")
     public WebElement userName;
@@ -24,7 +24,7 @@ public class TestCenterTechproPage {
 
     public static class BlueRentACarPage {
         public BlueRentACarPage(){
-            PageFactory.initElements(Driver.getDriver(),this);
+            PageFactory.initElements(C01_DataProvider.Driver.getDriver(),this);
         }
         @FindBy(xpath = "(//*[@role='button'])[1]")
         public WebElement login;

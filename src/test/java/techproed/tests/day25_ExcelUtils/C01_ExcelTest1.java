@@ -1,7 +1,7 @@
 package techproed.tests.day25_ExcelUtils;
 
 import org.testng.annotations.Test;
-import techproed.utilities.ExcelUtils;
+import techproed.tests.day26_ExcelDataProvider.C01_DataProvider;
 
 import java.io.FileNotFoundException;
 
@@ -20,7 +20,7 @@ public class C01_ExcelTest1 {
     public void excelTest1() throws FileNotFoundException {
         String path = "src/test/java/resources/mysmoketestdata.xlsx";
         String sayfa = "customer_info";
-        ExcelUtils excelUtils = new ExcelUtils(path,sayfa);
+        C01_DataProvider.ExcelUtils excelUtils = new C01_DataProvider.ExcelUtils(path,sayfa);
         System.out.println(excelUtils.getCellData(1, 0));
         String email = excelUtils.getCellData(1,0);
         String password = excelUtils.getCellData(1,1);

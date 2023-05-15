@@ -4,14 +4,14 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.TestCenterTechproPage;
+import techproed.tests.day26_ExcelDataProvider.C01_DataProvider;
 import techproed.utilities.ConfigReader;
-import techproed.utilities.Driver;
 
 public class C03_PageKullanimi {
     @Test
     public void test01() {
       //https://testcenter.techproeducation.com/index.php?page=form-authentication sayfasina gidin
-        Driver.getDriver().get(ConfigReader.getProperty("testCenterUrl"));
+        C01_DataProvider.Driver.getDriver().get(ConfigReader.getProperty("testCenterUrl"));
         //Page object Model kullanarak sayfaya giriş yapildigini test edin
         //Yukarida sayfaya girdim simdi locateleri almam lazim onun icin
         TestCenterTechproPage TestCenterTechproPage = new TestCenterTechproPage();
@@ -26,7 +26,7 @@ public class C03_PageKullanimi {
          TestCenterTechproPage.logout.click();
          //loguut oldugunu "login Page " basligini locate ederek dogrulayabiliriz
         Assert.assertTrue(TestCenterTechproPage.giris.isDisplayed());
-        Driver.closeDriver();
+        C01_DataProvider.Driver.closeDriver();
 
 
     }
