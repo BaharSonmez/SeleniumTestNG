@@ -7,6 +7,7 @@ import techproed.pages.BlueRentalPage;
 import techproed.pages.GooglePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.DataProviderUtils;
+import techproed.utilities.Driver;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -31,7 +32,7 @@ public class C05_DataProvider {
     }
         @Test(dataProvider = "blueRental")
          public void testdataprovider(String email, String password){
-            techproed.tests.day26_ExcelDataProvider.C01_DataProvider.Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
+           Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
 
             BlueRentalPage blueRentalPage = new BlueRentalPage();
             blueRentalPage.login.click();//login butonuna basti

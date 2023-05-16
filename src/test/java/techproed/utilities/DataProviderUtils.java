@@ -18,7 +18,7 @@ public class DataProviderUtils {
 
     @DataProvider
     public Object[][] blueRental() throws FileNotFoundException {
-        C01_DataProvider.ExcelUtils excelUtils = new C01_DataProvider.ExcelUtils("src/test/java/resources/mysmoketestdata.xlsx ","customer_info");
+     ExcelUtils excelUtils = new ExcelUtils("src/test/java/resources/mysmoketestdata.xlsx ","customer_info");
         return excelUtils.getDataArray();
 
 
